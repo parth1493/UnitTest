@@ -15,6 +15,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    javaCompileOptions {
+//        annotationProcessorOptions {
+//            arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+//        }
+//    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -22,7 +28,17 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,14 +58,12 @@ dependencies {
     def arch_version = "2.1.0"
     testImplementation "androidx.arch.core:core-testing:$arch_version"
 
-
     // -------- LOCAL UNIT TESTS (use JUnit5)
     // JUnit Jupiter
     def junit_jupiter_version = "5.6.2"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_jupiter_version"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$junit_jupiter_version"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_jupiter_version"
-
 
     // -------- MOCKITO
     def mockito_version = "3.3.3"
