@@ -1,10 +1,11 @@
-package com.parth.unittest;
+package com.parth.unittest.ui.notelist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import com.parth.unittest.R;
 import com.parth.unittest.di.DaggerAppComponent;
 import com.parth.unittest.repository.NoteRepository;
 
