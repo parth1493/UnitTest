@@ -56,7 +56,7 @@ dependencies {
 
     // Architecture components testing
     def arch_version = "2.1.0"
-    testImplementation "androidx.arch.core:core-testing:$arch_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$arch_version"
 
     // -------- LOCAL UNIT TESTS (use JUnit5)
     // JUnit Jupiter
