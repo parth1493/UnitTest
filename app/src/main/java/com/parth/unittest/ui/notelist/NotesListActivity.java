@@ -2,12 +2,14 @@ package com.parth.unittest.ui.notelist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.parth.unittest.R;
 import com.parth.unittest.di.DaggerAppComponent;
 import com.parth.unittest.repository.NoteRepository;
+import com.parth.unittest.ui.note.NoteActivity;
 
 import javax.inject.Inject;
 
@@ -27,5 +29,7 @@ public class NotesListActivity extends DaggerAppCompatActivity {
 
         Log.d(TAG, "onCreate: " + noteRepository);
 
+        Intent intent = new Intent(this, NoteActivity.class);
+        startActivity(intent);
     }
 }

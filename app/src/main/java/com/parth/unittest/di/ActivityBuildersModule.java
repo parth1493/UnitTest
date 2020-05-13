@@ -1,5 +1,6 @@
 package com.parth.unittest.di;
 
+import com.parth.unittest.ui.note.NoteActivity;
 import com.parth.unittest.ui.notelist.NotesListActivity;
 
 import dagger.Module;
@@ -10,4 +11,7 @@ public abstract class ActivityBuildersModule {
 
     @ContributesAndroidInjector
     abstract NotesListActivity contributeNotesListActivity();
+
+    @ContributesAndroidInjector
+    abstract NoteActivity contributeNotesActivity();
 }
